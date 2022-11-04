@@ -23,16 +23,16 @@ import lombok.Setter;
 @Entity @Table(name = "pedidos") @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class Pedido {
 	
-		@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-		private Long id;
-		
-		@NotNull 
-		private LocalDateTime dataHora;
-		
-		@NotNull @Enumerated(EnumType.STRING)
-		private Status status;
-		
-		@OneToMany(cascade=CascadeType.PERSIST, mappedBy="pedido")
-		private List<ItemDoPedido> itens = new ArrayList<>();
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@NotNull 
+	private LocalDateTime dataHora;
+	
+	@NotNull @Enumerated(EnumType.STRING)
+	private Status status;
+	
+	@OneToMany(cascade=CascadeType.PERSIST, mappedBy="pedido")
+	private List<ItemDoPedido> itens = new ArrayList<>();
 		
 }
